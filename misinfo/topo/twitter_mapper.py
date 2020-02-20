@@ -10,6 +10,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.manifold import Isomap
 from sklearn.preprocessing import MinMaxScaler
 
+print("fuck the system")
 
 # Store the data frame,
 df = pd.read_csv("ArsonEmergency_tweets.csv") # store a dataframe to be formatted for mapper
