@@ -52,3 +52,14 @@ if __name__ == "__main__":
                 adj_map[otheruser]["following"].append(username)
 
     pprint(adj_map)
+
+    new_data = {"username": list(all_usernames),
+                "follower_list": [],
+                "following_list": []}
+
+    for username in all_usernames:
+        new_data["follower_list"].append(adj_map[username]["follower"])
+        new_data["following_list"].append(adj_map[username]["following"])
+
+    new_df = pd.DataFrame(new_data)
+    new_df.to_csv(outfile, sep="\t")
