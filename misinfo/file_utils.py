@@ -87,3 +87,18 @@ def get_tmp_file(suffix=None):
     """
     with tempfile.NamedTemporaryFile(suffix=suffix) as temp_file:
         return temp_file.name
+
+
+def longest_common_prefix(str_list):
+    """Return the longest common prefix of two strings """
+    longest_pre = ""
+    if not str_list:
+        return longest_pre
+
+    shortest_str = min(str_list, key=len)
+    for i in range(len(shortest_str)):
+        if all([x.startswith(shortest_str[:i+1]) for x in str_list]):
+            longest_pre = shortest_str[:i+1]
+        else:
+            break
+    return longest_pre
